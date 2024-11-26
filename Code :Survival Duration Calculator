@@ -1,0 +1,46 @@
+# Writing basic codes to calculate the age in different units
+# defining a function which takes input of age and unit then validate them and give the converted age.
+
+def age_cal():
+    
+    # Taking user input
+    print("Enter your age in years:")
+    try:
+        age_y = int(input())  # Convert input to an integer
+
+        # Checking if the age is valid
+        if age_y < 0:
+            print("Please enter a valid age as age cannot be negative.")
+        elif age_y == 0:
+            print("You are just a newborn baby!")
+        else:
+            print("Enter the unit (e.g., months, weeks, days, hours, minutes, seconds, or their abbreviations m, w, d, h, min, s):")
+            unit = input()
+
+            # Check the unit and calculate age
+            if unit == "m" or unit.lower() == "months":
+                age = age_y * 12
+                print(f"Your age in months is {age} months.")
+            elif unit == "w" or unit.lower() == "weeks":
+                age = age_y * 52
+                print(f"Your age in weeks is {age} weeks.")
+            elif unit == "d" or unit.lower() == "days":
+                age = age_y * 365
+                print(f"Your age in days is {age} days.")
+            elif unit == "h" or unit.lower() == "hours":
+                age = age_y * 365 * 24
+                print(f"Your age in hours is {age} hours.")
+            elif unit == "min" or unit.lower() == "minutes":
+                age = age_y * 365 * 24 * 60
+                print(f"Your age in minutes is {age} minutes.")
+            elif unit == "s" or unit.lower() == "seconds":
+                age = age_y * 365 * 24 * 60 * 60
+                print(f"Your age in seconds is {age} seconds.")
+            else:
+                print("Please enter a valid unit (m, w, d, h, min, s, or their full names).")
+    except ValueError:
+        print("Invalid input! Please enter a valid number for age.")
+
+# Call the function
+age_cal()
+
